@@ -1,16 +1,15 @@
 package Amazing;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 
 public class EmpresaAmazing {
 	private String cuitAmazing;
 	//atributos
-	HashMap<Integer,Pedido> pedidos = new HashMap<Integer, Pedido>();
+	List<Pedido> pedidos = new ArrayList<>();
 	String nombre= "Amazing";
-	List<transporte> listaTransportes = new ArrayList<>(); 
+	List<transporte> listaTransportes = new ArrayList<>();
 public EmpresaAmazing(String cuit) {	
 	setCuitAmazing(cuit);
 	
@@ -28,6 +27,11 @@ public EmpresaAmazing(String cuit) {
 		Utilitario utilitario = new Utilitario(patente,volMax,valorViaje,valorExtra);
 		listaTransportes.add(utilitario);
 		
+	}
+	public int registrarPedido(String cliente, String direccion, int dni) {
+		Pedido pedido = new Pedido(cliente,direccion,dni);
+		pedidos.add(pedido);
+		return 0;
 	}
 	//getters & setters---------------------------------------
 	

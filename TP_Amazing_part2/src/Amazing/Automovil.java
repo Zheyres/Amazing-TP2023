@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class Automovil extends transporte {
     private int cargaMaxima;
 
-    public Automovil(String patente, double volumen, double valor, int cargaMaxima) {
+    public Automovil(String patente, int volumen, int valor, int cargaMaxima) {
         super(patente, volumen, valor); // Llama al constructor de la clase base (transporte)
         this.cargaMaxima = cargaMaxima;
     }

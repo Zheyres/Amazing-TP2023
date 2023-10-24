@@ -5,18 +5,18 @@ import java.util.Map;
 
 public class transporte {
     private String patente;
-    private double volumen;
-    private double valor;
+    private int volumen;
+    public static int valorBase;
     private Map<Integer, paquete> carga;
 
-    public transporte(String patente, double volumen, double valor) {
+    public transporte(String patente, int volumen, int valor) {
         this.patente = patente;
         this.volumen = volumen;
-        this.valor = valor;
+        this.valorBase = valor;
         this.carga = new HashMap<>();
     }
 
-    // Getter and Setter methods for patente, volumen, and valor
+    // Getter and Setter methods for patente, volumen, and valorBase
     public String getPatente() {
         return patente;
     }
@@ -25,20 +25,20 @@ public class transporte {
         this.patente = patente;
     }
 
-    public double getVolumen() {
+    public int getVolumen() {
         return volumen;
     }
 
-    public void setVolumen(double volumen) {
+    public void setVolumen(int volumen) {
         this.volumen = volumen;
     }
 
-    public double getValor() {
-        return valor;
+    public int getValorBase() {
+        return valorBase;
     }
 
-    public void setValor(double valor) {
-        this.valor = valor;
+    public void setValorBase(int valor) {
+        this.valorBase = valor;
     }
 
     // Getter and Setter methods for carga

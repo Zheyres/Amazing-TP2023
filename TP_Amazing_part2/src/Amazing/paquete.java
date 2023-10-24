@@ -2,38 +2,40 @@ package Amazing;
 
 public class paquete {
     private Integer codigo;
-    private double volumen;
-    private double precio;
-    private String entregado;
+    private int volumen;
+    private int precio;
+    private String estado;
 
-    public paquete(Integer codigo, double volumen, double precio, String entregado) {
+    public paquete(Integer codigo, int volumen, int precio, String estado) {
         this.codigo = codigo;
         this.volumen = volumen;
         this.precio = precio;
-        this.entregado = entregado;
+        this.setEstado("pendiente");
     }
 
     public Integer devolverCodigo() {
         return codigo;
     }
 
-    public double devolverVolumen() {
+    public int devolverVolumen() {
         return volumen;
     }
 
-    public double devolverPrecio() {
+    public int devolverPrecio() {
         return precio;
     }
 
-    public String getEntregado() {
-        return entregado;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setEntregado(String entregado) {
-        this.entregado = entregado;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
-    public  double calcularAdicional() {
+    public  int calcularAdicional(paquete p) {
+    	int base = transporte.valorBase;
+    	//return base + precio+ this..getClass().getadicional();
     	return 0;
     }
 }
