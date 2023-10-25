@@ -10,7 +10,9 @@ public class Utilitario extends Transporte {
 	}
 	
 	public void calcularValorExtra() {
-		this.valor = this.valorExtra * carga.size();
+		if (carga.size() > 3) {
+			this.valor += this.valorExtra;
+		}
 	}
 	
 	public void cargarPaquete() {
