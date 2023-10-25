@@ -9,9 +9,14 @@ public abstract class Transporte {
 	protected double volumen;
 	protected double valor;
 	protected HashMap<Integer, Paquete> carga;
+	protected boolean cargado;
 	
 	Transporte(String patente, double volumen, double valor) {
-		
+		this.patente = patente;
+		this.volumen = volumen;
+		this.valor = valor;
+		carga = null;
+		this.cargado = false;
 	}
 	
 	public Paquete getPaquete(int codPaq) {
