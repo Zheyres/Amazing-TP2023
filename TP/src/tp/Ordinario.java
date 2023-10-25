@@ -10,6 +10,6 @@ public class Ordinario extends Paquete{
 	}
 	
 	public void calcularAdicional() {
-		
+		this.precio += envio;
 	}
 }
