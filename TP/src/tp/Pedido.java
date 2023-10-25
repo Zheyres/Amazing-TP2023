@@ -20,6 +20,13 @@ public class Pedido {
 		this.dni = dni;
 		this.cerrado = false;
 	}
+
+	public Paquete getPaquete(int codPaq) {
+		if (!carrito.containsKey(codPaq)) {
+			throw new RuntimeException("No contiene el paquete.");
+		}
+		return carrito.get(codPaq);
+	}
 	
 	public void agregarProducto(int codProducto, Paquete paq) {
 		if (carrito.containsKey(codProducto)) {
@@ -49,7 +56,10 @@ public class Pedido {
 	}
 	
 	public ArrayList<Paquete> devolverCarrito() {
-		ArrayList<Paquete> copiaCarrito = carrito;
+		ArrayList<Paquete> copiaCarrito = new ArrayList<Paquete>();
+		for (int cod:carrito.keySet()) {
+			copiaCarrito.add(getPaquete(cod));
+		}
 		return copiaCarrito;
 	}
 	
