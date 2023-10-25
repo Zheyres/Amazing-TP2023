@@ -74,5 +74,11 @@ public class Empresa {
 		}
 		return getTransporte(patente).devolverCarga();
 	}
-	
+
+	public double costoAPagarViaje(String patente) {
+		if (!transportes.containsKey(patente)) {
+			throw new RuntimeException("No existe ese transporte.");
+		}
+		return getTransporte(patente).devolverValor();
+	}	
 }
