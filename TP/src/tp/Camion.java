@@ -8,6 +8,13 @@ public class Camion extends Transporte {
 		super(patente, volumen, valor);
 		this.valorAdicional = valorAdicional;
 	}
+
+	public void calcularAdicional() {
+		if (!cargado) {
+			throw new RuntimeException("El vehiculo no esta cargado, no se puede calcular hasta que se cargue.");
+		}
+		this.valor += valorAdicional * carga.size();
+	}
 	
 	public void cargarPaquete() {
 		
