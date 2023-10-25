@@ -14,6 +14,17 @@ public abstract class Transporte {
 		
 	}
 	
+	public Paquete getPaquete(int codPaq) {
+		if (!carga.containsKey(codPaq)) {
+			throw new RuntimeException("No contiene el paquete.");
+		}
+		return carga.get(codPaq);
+	}
+	
+	public int devolverTamCarga() {
+		return carga.size();
+	}
+	
 	public String devolverPatente() {
 		return this.patente;
 	}
@@ -28,10 +39,19 @@ public abstract class Transporte {
 	
 	public ArrayList<Paquete> devolverCarga() {
 		ArrayList<Paquete> listaCarga = new ArrayList<Paquete>();
-		for (int cod:this.carga.keySet()) {
-			listaCarga.add(this.carga.get(cod));
+		for (int cod:carga.keySet()) {
+			listaCarga.add(getPaquete(cod));
 		}
 		return listaCarga;
+	}
+	
+	public boolean paquetesIguales(Paquete paq) {
+		for (int cod:carga.keySet()) {
+			if (getPaquete(cod).getClass() == paq.getClass() && getPaquete(cod).devolverVolumen() == paq.devolverVolumen() && getPaquete(cod).devolverPrecio() == paq.devolverPrecio()) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public abstract void cargarPaquete();
