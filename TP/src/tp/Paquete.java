@@ -8,7 +8,9 @@ public abstract class Paquete {
 	protected String entregado;
 	
 	Paquete(int codigo, double volumen, double precio) {
-		
+		this.codigo = codigo;
+		this.volumen = volumen;
+		this.precio = precio;
 	}
 	
 	public int devolverCodigo() {
