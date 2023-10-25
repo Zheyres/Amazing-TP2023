@@ -49,7 +49,7 @@ public class Pedido {
 	}
 	
 	public ArrayList<Paquete> devolverCarrito() {
-		ArrayList<Paquete> copiaCarrito = new ArrayList<Paquete>();
+		ArrayList<Paquete> copiaCarrito = carrito;
 		return copiaCarrito;
 	}
 	
