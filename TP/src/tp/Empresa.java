@@ -80,5 +80,31 @@ public class Empresa {
 			throw new RuntimeException("No existe ese transporte.");
 		}
 		return getTransporte(patente).devolverValor();
-	}	
+	}
+
+	public boolean algunTransporteIdentico() {
+		boolean acum = false;
+		for (String patente:transportes.keySet()) {
+			acum = acum || transportesIdenticos(patente);
+		}
+		return acum;
+	}
+	
+	public boolean transportesIdenticos(String pat) {
+		for (String patente:transportes.keySet()) {
+			if (!patente.equals(pat) && getTransporte(patente).getClass() == getTransporte(pat).getClass() && coincidenCarga(patente, pat)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean coincidenCarga(String patente1, String patente2) {
+		ArrayList <Paquete> cargaT1 = getTransporte(patente1).devolverCarga();
+		boolean acum = true;
+		for (Paquete paqT1:cargaT1) {
+			acum = acum && cargaT1.size() == getTransporte(patente2).devolverTamCarga() && getTransporte(patente2).paquetesIguales(paqT1);
+		}
+		return acum;
+	}
 }
