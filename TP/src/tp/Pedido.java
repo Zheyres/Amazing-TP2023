@@ -27,6 +27,10 @@ public class Pedido {
 		}
 		return carrito.get(codPaq);
 	}
+
+	public boolean devolverEstado() {
+		return this.cerrado;
+	}
 	
 	public void agregarProducto(int codProducto, Paquete paq) {
 		if (carrito.containsKey(codProducto)) {
