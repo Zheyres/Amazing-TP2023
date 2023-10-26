@@ -2,10 +2,10 @@ package tp;
 
 public class Especial extends Paquete{
 
-	protected double porcentaje;
-	protected double valor;
+	protected int porcentaje;
+	protected int valor;
 	
-	Especial(int codigo, double volumen, double precio, double porcentaje, double valor) {
+	Especial(int codigo, int volumen, int precio, int porcentaje, int valor) {
 		super(codigo, volumen, precio);
 		this.porcentaje = porcentaje;
 		this.valor = valor;

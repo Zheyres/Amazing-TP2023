@@ -6,12 +6,12 @@ import java.util.HashMap;
 public abstract class Transporte {
 
 	protected String patente;
-	protected double volumen;
-	protected double valor;
+	protected int volumen;
+	protected int valor;
 	protected HashMap<Integer, Paquete> carga;
 	protected boolean cargado;
 	
-	Transporte(String patente, double volumen, double valor) {
+	Transporte(String patente, int volumen, int valor) {
 		this.patente = patente;
 		this.volumen = volumen;
 		this.valor = valor;
@@ -34,11 +34,11 @@ public abstract class Transporte {
 		return this.patente;
 	}
 	
-	public double devolverVolumen() {
+	public int devolverVolumen() {
 		return this.volumen;
 	}
 	
-	public double devolverValor() {
+	public int devolverValor() {
 		return this.valor;
 	}
 	
@@ -60,4 +60,9 @@ public abstract class Transporte {
 	}
 	
 	public abstract void cargarPaquete();
+
+	public void agregarPaquete(int codPedido, Paquete paquete) {
+		carga.put(paquete.codigo, paquete);
+		
+	}
 }

@@ -4,7 +4,7 @@ public class Utilitario extends Transporte {
 
 	protected double valorExtra;
 	
-	Utilitario(String patente, double volumen, double valor, double valorExtra) {
+	Utilitario(String patente, int volumen, int valor, int valorExtra) {
 		super(patente, volumen, valor);
 		this.valorExtra = valorExtra;
 	}

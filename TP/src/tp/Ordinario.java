@@ -2,9 +2,9 @@ package tp;
 
 public class Ordinario extends Paquete{
 
-	protected double envio;
+	protected int envio;
 	
-	Ordinario(int codigo, double volumen, double precio, double envio) {
+	Ordinario(int codigo, int volumen, int precio, int envio) {
 		super(codigo, volumen, precio);
 		this.envio = envio;
 	}

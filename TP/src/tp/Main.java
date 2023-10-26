@@ -1,4 +1,4 @@
-package Amazing;
+package tp;
 
 public class Main {
 

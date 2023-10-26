@@ -4,7 +4,7 @@ public class Camion extends Transporte {
 
 	protected double valorAdicional;
 	
-	Camion(String patente, double volumen, double valor, double valorAdicional) {
+	Camion(String patente, int volumen, int valor, int valorAdicional) {
 		super(patente, volumen, valor);
 		this.valorAdicional = valorAdicional;
 	}

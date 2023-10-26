@@ -1,4 +1,4 @@
-package Amazing;
+package tp;
 
 import java.util.Map;
 

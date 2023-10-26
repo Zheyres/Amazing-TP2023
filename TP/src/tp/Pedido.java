@@ -8,13 +8,14 @@ public class Pedido {
 	protected int codPedido;
 	protected String nombre;
 	protected String direccion;
-	protected String dni;
+	protected int dni;
 	protected HashMap<Integer, Paquete> carrito;
 	protected double costoTotal;
 	protected boolean cerrado;
 	
-	Pedido(int codPedido, String nombre, String direccion, String dni) {
-		this.codPedido = codPedido;
+	
+	Pedido(String nombre, String direccion, int dni) {
+		//this.codPedido = codPedido;
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.dni = dni;
@@ -65,6 +66,13 @@ public class Pedido {
 	
 	public void cerrarPedido() {
 		this.cerrado = true;
+	}
+
+	/**
+	 * @return Si esta o no cerrado
+	 */
+	public boolean isCerrado() {
+		return cerrado;
 	}
 }
 
