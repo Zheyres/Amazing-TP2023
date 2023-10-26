@@ -107,4 +107,11 @@ public class Empresa {
 		}
 		return acum;
 	}
+
+	public void cerrarPedido(int codPedido) {
+		if(getPedido(codPedido).devolverEstado() == true) {
+			throw new RuntimeException("El pedido ya esta cerrado.");
+		}
+		getPedido(codPedido).cerrarPedido();
+	}
 }
