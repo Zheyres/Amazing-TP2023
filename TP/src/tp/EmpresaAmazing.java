@@ -76,7 +76,7 @@ public class EmpresaAmazing {
 	            List<Paquete> paquetesPendientes = new ArrayList<>();
  
 	            for (Paquete paquete : pedido.devolverCarrito()) {
-	                if ("pendiente".equals(paquete.getEntregado())) {
+	                if ("pendiente".equals(paquete.getEntregado()) && coincideRequisitos(paquete)) {
 	                    paquetesPendientes.add(paquete);
  
 	                    volumenTotalCargado += paquete.devolverVolumen();
@@ -90,7 +90,7 @@ public class EmpresaAmazing {
 	            for (Paquete paquete : paquetesPendientes) {
 	                transporte.agregarPaquete(pedido.codPedido, paquete);
 
-	                paquete.setEntregado("cargado");
+	                pedido.getPaquete(paquete.getCodigo()).setEntregado("cargado");
 
 	                resultado.append("Paquete ").append(paquete.codigo).append(" cargado en el transporte ").append(patente).append("\n");
 	            }
