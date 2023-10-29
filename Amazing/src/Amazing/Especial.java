@@ -13,8 +13,9 @@ public class Especial extends Paquete{
 	}
 	
 	public void calcularAdicional() {
-		this.precio *= porcentaje / 100;
-		if (volumen > 3000 && volumen < 5000) {
+		double adc =  (this.precio * porcentaje) / 100;
+		this.precio += adc; 
+		if (volumen >= 3000 && volumen <= 5000) {
 			this.precio += valor;
 		}
 		else if (volumen > 5000) {
